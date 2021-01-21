@@ -1,0 +1,4 @@
+name: MafiaPlugin
+version: ${project.version}
+main: com.magarin.MafiaPlugin
+api-version: 1.16
