@@ -1,0 +1,31 @@
+Command_Character: '^'
+
+Before_The_Game_Starts:
+  Help:
+    Not_Join_Game_Player:
+      - 'Commands Mafia game'
+      - ''
+      - '{C_Join_Game} : {D_Join_Game}'
+    Join_Game_Player:
+      - 'Commands Mafia game'
+      - ''
+      - '{C_Exit_Game} : {D_Exit_Game}'
+    Chief_Of_The_Room_Player:
+      - 'Commands Mafia game'
+      - ''
+      - '{C_Start_Game} : {D_Start_Game}'
+      - '{C_Check_Player} : {D_Check_Player}'
+      - '{C_Exit_Game} : {D_Exit_Game}'
+
+  Join_Game:
+    Command: 'join'
+    Description: 'Join Game.'
+  Exit_Game:
+    Command: 'exit'
+    Description: 'Exit Game.'
+  Check_Join_Player:
+    Command: 'player'
+    Description: 'Check join player.'
+  Start_Game__Chief_Of_The_Room_Player:
+    Command: 'start'
+    Description: 'Start Game.'
