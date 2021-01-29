@@ -1,0 +1,48 @@
+Game_Player:
+  Min: 5
+  Max: 10
+
+Game_Play_Option:
+  Last_Round: 15
+  # Play Time
+  Times:
+    # Unit : Minute
+    Day: 5
+    Vote: 2
+
+Game_Play_Jobs:
+  # 참가한 플레이어의 수와 작업 수는 동일해야 합니다.
+  # Warning !! The number of players join and the number of jobs must be the same.
+  Join_Player_Count_5:
+    - 'Mafia:2'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Citizen:1'
+  Join_Player_Count_6:
+    - 'Mafia:2'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Citizen:2'
+  Join_Player_Count_7:
+    - 'Mafia:2'
+    - 'Spy:1'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Citizen:2'
+  Join_Player_Count_8:
+    - 'Mafia:2'
+    - 'Spy:1'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Citizen:1'
+    - 'Army:1'
+    - 'Spiritualistic_Medium:1'
+  Join_Player_Count_9:
+    - 'Mafia:2'
+    - 'Spy:1'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Army:1'
+    - 'Spiritualistic_Medium:1'
+    - 'Detective:1'
+    - 'Politician:1'

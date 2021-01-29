@@ -11,7 +11,7 @@ File_Handler = Support Class
  */
 public class File_Jobs_info extends File_Handler {
 
-    private final static String m_Filename = "__Mafia_game_jobs_info.yml";
+    private final static String m_Filename = "__Mafia_game_Jobs_info.yml";
 
     /**
 <pre>

@@ -27,7 +27,7 @@ Army:
   Name: '군인'
   Description: '마피아의 공격으로부터 한차례 막아낼 수 있으며, 스파이가 군인을 찾았을 경우 군인도 스파이가 누구인지 알 수 있습니다.'
 # 영매
-Mediumistic:
+Spiritualistic_Medium:
   Name: '영매'
   Description: '밤마다 죽은 사람 한명을 지목하여 직업을 알아낼 수 있습니다.'
 # 사립탐정
