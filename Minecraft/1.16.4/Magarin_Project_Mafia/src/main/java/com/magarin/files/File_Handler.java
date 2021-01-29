@@ -105,8 +105,8 @@ Saves the imported value to the Yaml file Tag value.
                 _Config.set(in_Tag, (boolean) in_Value);
             // 데이터를 정수로 저장
             // save data with int
-            else if (in_Function.equalsIgnoreCase("int"))
-                _Config.set(in_Tag, (int) in_Value);
+            else if (in_Function.equalsIgnoreCase("integer"))
+                _Config.set(in_Tag, (Integer) in_Value);
             // 데이터를 소수로 저장
             // save data with double
             else if (in_Function.equalsIgnoreCase("double"))
