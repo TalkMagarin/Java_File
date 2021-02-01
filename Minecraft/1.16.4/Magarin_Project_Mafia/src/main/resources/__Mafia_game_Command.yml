@@ -9,6 +9,7 @@ Before_The_Game_Starts:
     Join_Game_Player:
       - 'Commands Mafia game'
       - ''
+      - '{C_Check_Player} : {D_Check_Player}'
       - '{C_Exit_Game} : {D_Exit_Game}'
     Chief_Of_The_Room_Player:
       - 'Commands Mafia game'

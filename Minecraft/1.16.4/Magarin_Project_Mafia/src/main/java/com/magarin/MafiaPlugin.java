@@ -39,8 +39,8 @@ public final class MafiaPlugin extends JavaPlugin {
         if (sender instanceof Player) {}
         else {
             if (label.equalsIgnoreCase("mafia")) {
-                for (String items : File_Command.__get_Command__Before_The_Game_Starts_Help__("Not_Join_Game_Player")){
-                    System.out.println(items);
+                for (String items : File_Command.__get_Command__Before_The_Game_Starts_Help__("Chief_Of_The_Room_Player")){
+                    System.out.println(File_Command.__get_Command__Change_Help_Command__(items));
                 }
             }
         }
@@ -75,7 +75,8 @@ Creates a custom Yaml file.
         // 파일이 존재하지 않을 경우 파일 생성
         // Create a file if it does not exist.
         saveResource("__Mafia_game_Setting.yml", false);
-        saveResource("__Mafia_game_Join_info_.yml", false);
+        saveResource("__Mafia_game_Jobs_info.yml", false);
+        saveResource("__Mafia_game_Command.yml", false);
     }
 
 }
