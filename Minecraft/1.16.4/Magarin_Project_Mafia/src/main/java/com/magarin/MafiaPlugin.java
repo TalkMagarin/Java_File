@@ -1,6 +1,10 @@
 package com.magarin;
 
+import com.magarin.files.File_Command;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,7 +32,19 @@ public final class MafiaPlugin extends JavaPlugin {
      */
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {}
+        else {
+            if (label.equalsIgnoreCase("mafia")) {
+                for (String items : File_Command.__get_Command__Before_The_Game_Starts_Help__("Not_Join_Game_Player")){
+                    System.out.println(items);
+                }
+            }
+        }
+        return false;
     }
 
     /**

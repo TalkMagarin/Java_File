@@ -18,10 +18,10 @@ You can use the plug-in's custom command.
 </pre>
      * @param __in_Event 플레이어 채팅 이벤트 / Chat Player Event
      */
-    public static void __on_Event_AsyncPlayerChatEvent__(AsyncPlayerChatEvent __in_Event) {
+    public static void __on_Event_AsyncPlayerChatEvent__(AsyncPlayerChatEvent __in_Event, char __in_Command_Character) {
         String _Chat_Player__Message = __in_Event.getMessage();
         String[] _Split_Chat_Message = _Chat_Player__Message.split(" ");
-        _Split_Chat_Message[0] = _Split_Chat_Message[0].replace("^", "");
+        _Split_Chat_Message[0] = _Split_Chat_Message[0].replace(__in_Command_Character + "", "");
     }
 
 }
