@@ -5,18 +5,18 @@ Before_The_Game_Starts:
     Not_Join_Game_Player:
       - 'Commands Mafia game'
       - ''
-      - '{C_Join_Game} : {D_Join_Game}'
+      - '{C_C}{C_Join_Game} : {D_Join_Game}'
     Join_Game_Player:
       - 'Commands Mafia game'
       - ''
-      - '{C_Check_Player} : {D_Check_Player}'
-      - '{C_Exit_Game} : {D_Exit_Game}'
+      - '{C_C}{C_Check_Player} : {D_Check_Player}'
+      - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
     Chief_Of_The_Room_Player:
       - 'Commands Mafia game'
       - ''
-      - '{C_Start_Game} : {D_Start_Game}'
-      - '{C_Check_Player} : {D_Check_Player}'
-      - '{C_Exit_Game} : {D_Exit_Game}'
+      - '{C_C}{C_Start_Game} : {D_Start_Game}'
+      - '{C_C}{C_Check_Player} : {D_Check_Player}'
+      - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
 
   Join_Game:
     Command: 'join'

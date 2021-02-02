@@ -1,7 +1,7 @@
 package com.magarin.events;
 
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import com.magarin.files.File_Command;
 
 /**
  * Event - Char Player
@@ -22,6 +22,18 @@ You can use the plug-in's custom command.
         String _Chat_Player__Message = __in_Event.getMessage();
         String[] _Split_Chat_Message = _Chat_Player__Message.split(" ");
         _Split_Chat_Message[0] = _Split_Chat_Message[0].replace(__in_Command_Character + "", "");
+
+        if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
+
+        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Join_Game"))) {
+            // 게임 참가
+        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Exit_Game"))) {
+            // 게임 나가기
+        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"))) {
+            // 게임 참여자 확인
+        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {
+            // 방장 게임 시작
+        }
     }
 
 }
