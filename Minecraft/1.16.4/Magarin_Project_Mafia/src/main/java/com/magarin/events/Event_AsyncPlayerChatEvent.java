@@ -32,10 +32,40 @@ You can use the plug-in's custom command.
             // 게임 시작 전
             if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
                 // 도움말
+                if (__Map_Before_Start_Game.__Before__Check_join_player__(__in_Event.getPlayer().getName())) {
+                    // 게임 참여 여부
+                    if (__Map_Before_Start_Game.__Interface_Get_HashMap__(__in_Event.getPlayer().getName()).equalsIgnoreCase("Room Manager")) {
+                        // 방장일 경우
+                        for (String __Help_Text : File_Command.__get_Command__Before_The_Game_Starts_Help__("Chief_Of_The_Room_Player"))
+                            __in_Event.getPlayer().sendMessage(File_Command.__get_Command__Change_Help_Command__(__Help_Text));
+                    } else {
+                        // 방장이 아닐 경우
+                        for (String __Help_Text : File_Command.__get_Command__Before_The_Game_Starts_Help__("Join_Game_Player"))
+                            __in_Event.getPlayer().sendMessage(File_Command.__get_Command__Change_Help_Command__(__Help_Text));
+                    }
+                } else {
+                    // 게임 미참여
+                    for (String __Help_Text : File_Command.__get_Command__Before_The_Game_Starts_Help__("Not_Join_Game_Player"))
+                        __in_Event.getPlayer().sendMessage(File_Command.__get_Command__Change_Help_Command__(__Help_Text));
+                }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Join_Game"))) {
                 // 게임 참가
+                if (__Map_Before_Start_Game.__Before__Player_List_Count() == 0) {
+                    // 참여자가 없을 경우 방장 부여
+                    __Map_Before_Start_Game.__Before__Join_Player__(__in_Event.getPlayer().getName(), "Room Manager");
+                } else {
+                    // 일반 플레이어
+                    __Map_Before_Start_Game.__Before__Join_Player__(__in_Event.getPlayer().getName(), "Player");
+                }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Exit_Game"))) {
                 // 게임 나가기
+                if (__Map_Before_Start_Game.__Interface_Get_HashMap__(__in_Event.getPlayer().getName()).equalsIgnoreCase("Room Manager")) {
+                    // 방장이 나가면 방 폭파
+                    __Map_Before_Start_Game.__Before__Player_Clear();
+                } else {
+                    // 일반 플레이어
+                    __Map_Before_Start_Game.__Before__UnJoin_Player__(__in_Event.getPlayer().getName());
+                }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"))) {
                 // 게임 참여자 확인
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {

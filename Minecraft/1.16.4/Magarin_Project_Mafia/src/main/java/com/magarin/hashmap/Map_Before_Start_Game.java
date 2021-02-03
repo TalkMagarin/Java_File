@@ -29,7 +29,7 @@ public class Map_Before_Start_Game implements HashMap_Interface{
     }
 
     /**
-     *
+     * 플레이어가 게임에 참여했는지 확인
      * @param __in_Player_name Player name
      * @return boolean
      */
@@ -40,12 +40,16 @@ public class Map_Before_Start_Game implements HashMap_Interface{
             return true;
     }
 
+    /**
+     * 게임에 참여한 플레이어수 확인
+     * @return Integer
+     */
     public Integer __Before__Player_List_Count() {
         return this.__Before_Start_Game_Player_List__.size();
     }
 
     /**
-     *
+     * 게임 참여
      * @param __in_Player_name Player name
      * @param __in_Jobs_name Jobs name
      */
@@ -54,7 +58,22 @@ public class Map_Before_Start_Game implements HashMap_Interface{
     }
 
     /**
-     *
+     * 게임 나가기
+     * @param __in_Player_name Player name
+     */
+    public void __Before__UnJoin_Player__(String __in_Player_name) {
+        this.__Before_Start_Game_Player_List__.remove(__in_Player_name);
+    }
+
+    /**
+     * 플레이어 초기화
+     */
+    public void __Before__Player_Clear() {
+        this.__Before_Start_Game_Player_List__.clear();
+    }
+
+    /**
+     * 플레이어 값 가져오기
      * @param __in_Player_name Player name
      * @return String
      */
@@ -64,7 +83,7 @@ public class Map_Before_Start_Game implements HashMap_Interface{
     }
 
     /**
-     *
+     * 플레이어 값 설정하기
      * @param __in_Player_name Player name
      * @param __in_Replace_value  Set value
      */
