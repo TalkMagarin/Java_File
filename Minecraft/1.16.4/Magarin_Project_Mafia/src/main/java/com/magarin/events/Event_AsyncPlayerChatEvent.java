@@ -68,6 +68,9 @@ You can use the plug-in's custom command.
                 }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"))) {
                 // 게임 참여자 확인
+                for (String __Player : __Map_Before_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
+                    // 플레이어 이름 가져오기
+                }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {
                 // 방장 게임 시작
             }

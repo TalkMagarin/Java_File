@@ -17,6 +17,8 @@ public interface HashMap_Interface {
      */
     public String __Interface_Get_HashMap__(String __in_Key_value);
 
+    public HashMap<String, String> __Interface_Get_HashMap_List__();
+
     /**
      * Set Hash Map Data
      * @param __in_Key_value

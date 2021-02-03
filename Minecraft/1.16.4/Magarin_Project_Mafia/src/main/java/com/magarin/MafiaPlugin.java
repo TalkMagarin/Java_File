@@ -44,6 +44,7 @@ public final class MafiaPlugin extends JavaPlugin {
             if (label.equalsIgnoreCase("mafia")) {
                 System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
                 __Map_Before_Start_Game.__Before__Join_Player__("Talk_Magarin", "Join");
+                __Map_Before_Start_Game.__Before__Join_Player__("Talk_Magarins", "Join");
                 System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
             }
         }

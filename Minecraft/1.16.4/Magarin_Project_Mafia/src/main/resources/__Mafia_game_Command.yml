@@ -1,5 +1,6 @@
 Command_Character: '^'
 
+# 게임 시작 전
 Before_The_Game_Starts:
   Help:
     Not_Join_Game_Player:
@@ -30,3 +31,8 @@ Before_The_Game_Starts:
   Start_Game__Chief_Of_The_Room_Player:
     Command: 'start'
     Description: 'Start Game.'
+# 게임 시작 후
+After_The_Game_Starts:
+  Skill:
+    Command: 'skill'
+    Description: 'Jobs skill.'

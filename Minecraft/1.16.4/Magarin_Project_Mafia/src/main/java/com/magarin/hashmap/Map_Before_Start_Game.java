@@ -91,4 +91,14 @@ public class Map_Before_Start_Game implements HashMap_Interface{
     public void __Interface_Set_HashMap__(String __in_Player_name, String __in_Replace_value) {
         this.__Before_Start_Game_Player_List__.replace(__in_Player_name, __in_Replace_value);
     }
+
+    /**
+     * 플레이어 리스트 가져오기
+     * @return __Before_Start_Game_Player_List__
+     */
+    @Override
+    public HashMap<String, String> __Interface_Get_HashMap_List__() {
+        return __Before_Start_Game_Player_List__;
+    }
+
 }

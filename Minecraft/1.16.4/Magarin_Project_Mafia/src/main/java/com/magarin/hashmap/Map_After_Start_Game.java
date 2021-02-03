@@ -29,7 +29,7 @@ public class Map_After_Start_Game implements HashMap_Interface {
     }
 
     /**
-     *
+     * 시작한 게임에 플레이어가 존재하는지 확인
      * @param __in_Player_name Player name
      * @return boolean
      */
@@ -41,7 +41,7 @@ public class Map_After_Start_Game implements HashMap_Interface {
     }
 
     /**
-     *
+     * 게임이 시작될때 플레이어 등록
      * @param __in_Player_name Player name
      * @param __in_Jobs_name Jobs name
      */
@@ -50,7 +50,7 @@ public class Map_After_Start_Game implements HashMap_Interface {
     }
 
     /**
-     *
+     * 플레이어 직업 가져오기
      * @param __in_Player_name Player name
      * @return String
      */
@@ -60,12 +60,21 @@ public class Map_After_Start_Game implements HashMap_Interface {
     }
 
     /**
-     *
+     * 플레이어 직업 설정하기
      * @param __in_Player_name Player name
      * @param __in_Replace_value  Set value
      */
     @Override
     public void __Interface_Set_HashMap__(String __in_Player_name, String __in_Replace_value) {
         this.__After_Start_Game_Player_List__.replace(__in_Player_name, __in_Replace_value);
+    }
+
+    /**
+     * 플레이어 리스트 가져오기
+     * @return __After_Start_Game_Player_List__
+     */
+    @Override
+    public HashMap<String, String> __Interface_Get_HashMap_List__() {
+        return __After_Start_Game_Player_List__;
     }
 }
