@@ -24,7 +24,7 @@ You can use the plug-in's custom command.
         _Split_Chat_Message[0] = _Split_Chat_Message[0].replace(__in_Command_Character + "", "");
 
         if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
-
+            // 도움말
         } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Join_Game"))) {
             // 게임 참가
         } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Exit_Game"))) {
