@@ -1,6 +1,7 @@
 package com.magarin;
 
-import com.magarin.files.File_Command;
+import com.magarin.hashmap.Map_After_Start_Game;
+import com.magarin.hashmap.Map_Before_Start_Game;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -24,6 +25,8 @@ public final class MafiaPlugin extends JavaPlugin {
     public void onEnable() {
         on_Load_Event_Syatem();
         on_Create_Yaml_file();
+
+        __Instance_Class__();
     }
 
     /**
@@ -39,9 +42,9 @@ public final class MafiaPlugin extends JavaPlugin {
         if (sender instanceof Player) {}
         else {
             if (label.equalsIgnoreCase("mafia")) {
-                for (String items : File_Command.__get_Command__Before_The_Game_Starts_Help__("Chief_Of_The_Room_Player")){
-                    System.out.println(File_Command.__get_Command__Change_Help_Command__(items));
-                }
+                System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
+                __Map_Before_Start_Game.__Before__Join_Player__("Talk_Magarin", "Join");
+                System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
             }
         }
         return false;
@@ -77,6 +80,20 @@ Creates a custom Yaml file.
         saveResource("__Mafia_game_Setting.yml", false);
         saveResource("__Mafia_game_Jobs_info.yml", false);
         saveResource("__Mafia_game_Command.yml", false);
+    }
+
+    private Map_Before_Start_Game __Map_Before_Start_Game = null;
+    private Map_After_Start_Game __Map_After_Start_Game = null;
+
+    /**
+<pre>
+Instance 를 생성하는 메소드 입니다.
+Create Instance class
+</pre>
+     */
+    private void  __Instance_Class__() {
+        __Map_Before_Start_Game = Map_Before_Start_Game.__Instance__();
+        __Map_After_Start_Game = Map_After_Start_Game.__Instance__();
     }
 
 }

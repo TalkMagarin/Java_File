@@ -1,5 +1,7 @@
 package com.magarin.events;
 
+import com.magarin.hashmap.Map_After_Start_Game;
+import com.magarin.hashmap.Map_Before_Start_Game;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import com.magarin.files.File_Command;
 
@@ -10,6 +12,9 @@ import com.magarin.files.File_Command;
  * @author Talk_Magarin
  */
 public class Event_AsyncPlayerChatEvent {
+
+    public static Map_Before_Start_Game __Map_Before_Start_Game = Map_Before_Start_Game.__Instance__();
+    public static Map_After_Start_Game __Map_After_Start_Game = Map_After_Start_Game.__Instance__();
 
     /**
 <pre>
@@ -23,16 +28,21 @@ You can use the plug-in's custom command.
         String[] _Split_Chat_Message = _Chat_Player__Message.split(" ");
         _Split_Chat_Message[0] = _Split_Chat_Message[0].replace(__in_Command_Character + "", "");
 
-        if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
-            // 도움말
-        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Join_Game"))) {
-            // 게임 참가
-        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Exit_Game"))) {
-            // 게임 나가기
-        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"))) {
-            // 게임 참여자 확인
-        } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {
-            // 방장 게임 시작
+        if (!__Map_After_Start_Game.__After__Check_join_player__(__in_Event.getPlayer().getName())) {
+            // 게임 시작 전
+            if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
+                // 도움말
+            } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Join_Game"))) {
+                // 게임 참가
+            } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Exit_Game"))) {
+                // 게임 나가기
+            } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"))) {
+                // 게임 참여자 확인
+            } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {
+                // 방장 게임 시작
+            }
+        } else {
+            // 게임 시작
         }
     }
 
