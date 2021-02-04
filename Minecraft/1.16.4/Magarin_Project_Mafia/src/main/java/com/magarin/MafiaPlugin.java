@@ -42,10 +42,7 @@ public final class MafiaPlugin extends JavaPlugin {
         if (sender instanceof Player) {}
         else {
             if (label.equalsIgnoreCase("mafia")) {
-                System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
-                __Map_Before_Start_Game.__Before__Join_Player__("Talk_Magarin", "Join");
-                __Map_Before_Start_Game.__Before__Join_Player__("Talk_Magarins", "Join");
-                System.out.println(__Map_Before_Start_Game.__Before__Player_List_Count());
+
             }
         }
         return false;
@@ -81,6 +78,7 @@ Creates a custom Yaml file.
         saveResource("__Mafia_game_Setting.yml", false);
         saveResource("__Mafia_game_Jobs_info.yml", false);
         saveResource("__Mafia_game_Command.yml", false);
+        saveResource("__Mafia_game_Message.yml", false);
     }
 
     private Map_Before_Start_Game __Map_Before_Start_Game = null;

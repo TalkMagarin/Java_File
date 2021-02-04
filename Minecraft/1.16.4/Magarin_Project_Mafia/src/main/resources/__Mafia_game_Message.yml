@@ -1,0 +1,21 @@
+# 게임 시작 전
+Before_The_Game_Starts:
+  Join_Game:
+    Title_Main: '§a게임 참여'
+    Title_Sub: '§f게임에 참여 하였습니다.'
+  Already_Join_Game:
+    Title_Main: '§c이미 참여'
+    Title_Sub: '§f이미 게임에 참여한 상태 입니다.'
+  MaxPlayer_Join_Game:
+    Title_Main: '§c참여 불가'
+    Title_Sub: '§f게임에 참여 가능한 인원이 꽉 차서 더이상 게임에 참여할 수 없습니다..'
+  Exit_Game:
+    Title_Main: '§b게임 나가기'
+    Title_Sub: '§f참여한 게임에서 나왔습니다.'
+  Exit_Game_Room_Manager:
+    Title_Main: '§c방폭파'
+    Title_Sub: '§f방장이 참여한 게임에서 나갔습니다. 참여한 게임이 사라집니다.'
+  Error:
+    Title_Main: '§c알 수 없음'
+    Title_Sub: '§f알 수 없는 명령어를 입력하셨습니다.'
+

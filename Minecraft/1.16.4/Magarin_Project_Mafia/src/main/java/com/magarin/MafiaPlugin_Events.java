@@ -21,6 +21,7 @@ public class MafiaPlugin_Events implements Listener {
         char _Command_Character = File_Command.__get_Command__Command_Character__().charAt(0);
         if (_Chat_Player__Message.charAt(0) == _Command_Character) {
             Event_AsyncPlayerChatEvent.__on_Event_AsyncPlayerChatEvent__(__in_Event, _Command_Character);
+            __in_Event.setCancelled(true);
         }
 
         return;
