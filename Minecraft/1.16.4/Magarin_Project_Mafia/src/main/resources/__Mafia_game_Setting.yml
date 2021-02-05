@@ -3,6 +3,7 @@ Game_Player:
   Max: 10
 
 Game_Play_Option:
+  # Round = Day
   Last_Round: 15
   # Play Time
   Times:
@@ -39,6 +40,15 @@ Game_Play_Jobs:
     - 'Spiritualistic_Medium:1'
   Join_Player_Count_9:
     - 'Mafia:2'
+    - 'Spy:1'
+    - 'Doctor:1'
+    - 'Police:1'
+    - 'Army:1'
+    - 'Spiritualistic_Medium:1'
+    - 'Detective:1'
+    - 'Politician:1'
+  Join_Player_Count_10:
+    - 'Mafia:3'
     - 'Spy:1'
     - 'Doctor:1'
     - 'Police:1'

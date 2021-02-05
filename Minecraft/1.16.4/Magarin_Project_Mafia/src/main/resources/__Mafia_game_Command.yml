@@ -3,21 +3,23 @@ Command_Character: '^'
 # 게임 시작 전
 Before_The_Game_Starts:
   Help:
-    Not_Join_Game_Player:
-      - 'Commands Mafia game'
-      - ''
-      - '{C_C}{C_Join_Game} : {D_Join_Game}'
-    Join_Game_Player:
-      - 'Commands Mafia game'
-      - ''
-      - '{C_C}{C_Check_Player} : {D_Check_Player}'
-      - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
-    Chief_Of_The_Room_Player:
-      - 'Commands Mafia game'
-      - ''
-      - '{C_C}{C_Start_Game} : {D_Start_Game}'
-      - '{C_C}{C_Check_Player} : {D_Check_Player}'
-      - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
+    Command: 'help'
+    Description:
+      Not_Join_Game_Player:
+        - 'Commands Mafia game'
+        - ''
+        - '{C_C}{C_Join_Game} : {D_Join_Game}'
+      Join_Game_Player:
+        - 'Commands Mafia game'
+        - ''
+        - '{C_C}{C_Check_Player} : {D_Check_Player}'
+        - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
+      Chief_Of_The_Room_Player:
+        - 'Commands Mafia game'
+        - ''
+        - '{C_C}{C_Start_Game} : {D_Start_Game}'
+        - '{C_C}{C_Check_Player} : {D_Check_Player}'
+        - '{C_C}{C_Exit_Game} : {D_Exit_Game}'
 
   Join_Game:
     Command: 'join'
@@ -33,6 +35,34 @@ Before_The_Game_Starts:
     Description: 'Start Game.'
 # 게임 시작 후
 After_The_Game_Starts:
-  Skill:
-    Command: 'skill'
-    Description: 'Jobs skill.'
+  Day:
+    Help:
+      Command: 'help'
+      Description:
+        - 'Commands Mafia game'
+        - ''
+        - '{C_C}{C_Skip} : {D_Skip}'
+        - '{C_C}{C_Vote} <Playername> : {D_Vote}'
+    Skip:
+      Command: 'skip'
+      Description: 'I want to skip the time now.'
+    Vote:
+      Command: 'vote'
+      Description: 'Vote for the player to kill.'
+  Night:
+    Info:
+      Command: 'info'
+        Description:
+          - '당신의 직업은 {Player_Jobs_Name} 입니다.'
+          - ''
+          - '{Player_Jobs_Description}'
+    Help:
+      Command: 'help'
+      Description:
+        Mafia:
+          - 'Commands Mafia game'
+          - ''
+          - '{C_C}{C_Kill} <Playername> : {D_Kill}'
+    Kill:
+      Command: 'kill'
+      Description: 'Killing the player.'

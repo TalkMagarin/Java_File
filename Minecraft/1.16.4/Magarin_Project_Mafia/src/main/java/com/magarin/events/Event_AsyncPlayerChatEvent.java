@@ -36,7 +36,7 @@ You can use the plug-in's custom command.
 
         if (!__Map_After_Start_Game.__After__Check_join_player__(__in_Event.getPlayer().getName())) {
             // 게임 시작 전
-            if (_Split_Chat_Message[0].equalsIgnoreCase("Help")) {
+            if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Help"))) {
                 // 도움말
                 if (__Map_Before_Start_Game.__Before__Check_join_player__(__in_Event.getPlayer().getName())) {
                     // 게임 참여 여부

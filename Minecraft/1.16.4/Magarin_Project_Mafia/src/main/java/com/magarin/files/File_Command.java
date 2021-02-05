@@ -35,7 +35,7 @@ Recalls data related to the Help command.
      * @return List<String>
      */
     public static List<String> __get_Command__Before_The_Game_Starts_Help__(String __in_Tag) {
-        String Full_Tag = String.format("Before_The_Game_Starts.Help.%s", __in_Tag);
+        String Full_Tag = String.format("Before_The_Game_Starts.Help.Description.%s", __in_Tag);
         return (List<String>)__get_Object__(m_Filename, Full_Tag);
     }
 
@@ -74,6 +74,7 @@ Converts Tag values that belong to the list.
      * @return String
      */
     public static String __get_Command__Change_Help_Command__(String __in_Help_Command_Text) {
+        // 게임 시작 전
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{C_C}", __get_Command__Command_Character__());
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{C_Join_Game}", __get_Command__Before_The_Game_Starts_Command__("Join_Game"));
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{D_Join_Game}", __get_Command__Before_The_Game_Starts_Description__("Join_Game"));
@@ -83,8 +84,31 @@ Converts Tag values that belong to the list.
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{D_Start_Game}", __get_Command__Before_The_Game_Starts_Description__("Start_Game__Chief_Of_The_Room_Player"));
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{C_Check_Player}", __get_Command__Before_The_Game_Starts_Command__("Check_Join_Player"));
         __in_Help_Command_Text = __in_Help_Command_Text.replace("{D_Check_Player}", __get_Command__Before_The_Game_Starts_Description__("Check_Join_Player"));
+        // 게임 시작 후
+        __in_Help_Command_Text = __in_Help_Command_Text.replace("{C_Skip}", __get_Command__After_The_Game_Starts_Command__("Day", "Skip"));
+        __in_Help_Command_Text = __in_Help_Command_Text.replace("{D_Skip}", __get_Command__After_The_Game_Starts_Description__("Day", "Skip"));
+        __in_Help_Command_Text = __in_Help_Command_Text.replace("{C_Vote}", __get_Command__After_The_Game_Starts_Command__("Day", "Vote"));
+        __in_Help_Command_Text = __in_Help_Command_Text.replace("{D_Vote}", __get_Command__After_The_Game_Starts_Description__("Day", "Vote"));
 
         return __in_Help_Command_Text;
+    }
+
+    public static List<String> __get_Command__After_The_Fame_Starts_Help_Day() {
+        return (List<String>)__get_Object__(m_Filename, "After_The_Game_Starts.Day.Help.Description");
+    }
+    public static List<String> __get_Command__After_The_Fame_Starts_Help_Night(String __in_Jobs_Name_tag) {
+        String Full_Tag = String.format("After_The_Game_Starts.Night.Help.Description.%s", __in_Jobs_Name_tag);
+        return (List<String>)__get_Object__(m_Filename, Full_Tag);
+    }
+
+    public static String __get_Command__After_The_Game_Starts_Command__(String __in_Time_tag, String __in_Tag) {
+        String Full_Tag = String.format("After_The_Game_Starts.%s.%s.Command", __in_Time_tag, __in_Tag);
+        return (String)__get_Object__(m_Filename, Full_Tag);
+    }
+
+    public static String __get_Command__After_The_Game_Starts_Description__(String __in_Time_tag, String __in_Tag) {
+        String Full_Tag = String.format("After_The_Game_Starts.%s.%s.Description", __in_Time_tag, __in_Tag);
+        return (String)__get_Object__(m_Filename, Full_Tag);
     }
 
 }
