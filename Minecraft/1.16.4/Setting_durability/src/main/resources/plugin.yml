@@ -1,0 +1,9 @@
+name: Setting_Durability
+version: ${project.version}
+main: com.talk_magarin.setting_durability.Setting_Durability
+api-version: 1.16
+authors: [ Talk_Magarin ]
+description: Player hand item Setting durability.
+
+commands:
+  mphsd:
