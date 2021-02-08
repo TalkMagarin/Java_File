@@ -66,8 +66,8 @@ Gets the time during the vote.
 </pre>
      * @return int
      */
-    public static Integer __get_Setting__Night_Time__() {
-        return (Integer)__get_Object__(m_Filename, "Game_Play_Option.Times.Night");
+    public static Integer __get_Setting__Vote_Time__() {
+        return (Integer)__get_Object__(m_Filename, "Game_Play_Option.Times.Vote");
     }
 
     /**

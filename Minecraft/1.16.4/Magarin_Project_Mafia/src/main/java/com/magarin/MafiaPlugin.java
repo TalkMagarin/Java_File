@@ -50,9 +50,21 @@ public final class MafiaPlugin extends JavaPlugin {
 //                        , File_Message.__get_Message__After_The_Game_Starts_Title_Sub__("Night", "Jobs_Info")
 //                );
             } else {
-//                MafiaPlugin_Timer.__After_Game_Timer__();
-                MafiaPlugin_Random.__Random_Set_Jobs_Players__();
-                System.out.println(__Map_After_Start_Game.__Interface_Get_HashMap_List__());
+//                MafiaPlugin_Timer.__Before_Game_Timer__();
+                MafiaPlugin_Timer.__After_Game_Timer__();
+//                __Map_Before_Start_Game.__Before__Player_Clear();
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test01", "Test01");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test02", "Test02");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test03", "Test03");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test04", "Test04");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test05", "Test05");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test06", "Test06");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test07", "Test07");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test08", "Test08");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test09", "Test09");
+//                __Map_Before_Start_Game.__Before__Join_Player__("Test10", "Test10");
+//                MafiaPlugin_Random.__Random_Set_Jobs_Players__();
+//                System.out.println(__Map_After_Start_Game.__Interface_Get_HashMap_List__());
             }
         }
         return false;

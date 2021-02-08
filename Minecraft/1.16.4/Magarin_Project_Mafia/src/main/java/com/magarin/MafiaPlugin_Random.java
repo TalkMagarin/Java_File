@@ -7,8 +7,17 @@ import com.magarin.hashmap.Map_Before_Start_Game;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Random Set jobs
+ *
+ * 2021-02-08
+ * @author Talk_Magarin
+ */
 public class MafiaPlugin_Random {
 
+    /**
+     * 게임 시작 시 플레이의 직업을 랜덤으로 설정합니다.
+     */
     public static void __Random_Set_Jobs_Players__() {
         Map_Before_Start_Game __Map_Before_Start_Game = Map_Before_Start_Game.__Instance__();
         Map_After_Start_Game __Map_After_Start_Game = Map_After_Start_Game.__Instance__();
