@@ -1,5 +1,6 @@
 package com.magarin;
 
+import com.magarin.files.File_Message;
 import com.magarin.hashmap.Map_After_Start_Game;
 import com.magarin.hashmap.Map_Before_Start_Game;
 import org.bukkit.Bukkit;
@@ -8,6 +9,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
 
 /**
  * Mafia game Plugin
@@ -39,10 +42,17 @@ public final class MafiaPlugin extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {}
-        else {
-            if (label.equalsIgnoreCase("mafia")) {
-
+        if (label.equalsIgnoreCase("mafia")) {
+            if (sender instanceof Player) {
+                Player __Player = (Player)sender;
+//                __Player.sendTitle(
+//                        File_Message.__get_Message__After_The_Game_Starts_Title_Main__("Night", "Jobs_Info")
+//                        , File_Message.__get_Message__After_The_Game_Starts_Title_Sub__("Night", "Jobs_Info")
+//                );
+            } else {
+//                MafiaPlugin_Timer.__After_Game_Timer__();
+                MafiaPlugin_Random.__Random_Set_Jobs_Players__();
+                System.out.println(__Map_After_Start_Game.__Interface_Get_HashMap_List__());
             }
         }
         return false;

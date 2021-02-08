@@ -23,4 +23,14 @@ public class File_Message extends File_Handler {
         return (String)__get_Object__(m_Filename, _Full_Tag);
     }
 
+    public static String __get_Message__After_The_Game_Starts_Title_Main__(String __in_Time_tag, String __in_Tag) {
+        String _Full_Tag = String.format("After_The_Game_Starts.%s.%s.Title_Main", __in_Time_tag, __in_Tag);
+        return (String)__get_Object__(m_Filename, _Full_Tag);
+    }
+
+    public static String __get_Message__After_The_Game_Starts_Title_Sub__(String __in_Time_tag, String __in_Tag) {
+        String _Full_Tag = String.format("After_The_Game_Starts.%s.%s.Title_Sub", __in_Time_tag, __in_Tag);
+        return (String)__get_Object__(m_Filename, _Full_Tag);
+    }
+
 }

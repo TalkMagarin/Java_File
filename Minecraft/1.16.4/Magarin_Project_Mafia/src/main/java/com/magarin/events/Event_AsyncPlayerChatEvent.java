@@ -107,6 +107,8 @@ You can use the plug-in's custom command.
                 // 게임 참여자 확인
                 if (__Map_Before_Start_Game.__Before__Check_join_player__(__in_Event.getPlayer().getName())) {
                     __in_Event.getPlayer().sendMessage("-- 게임 참여자 명단 --");
+                    String __Str_Count = String.format("참여자 수 : %d / %d", __Map_Before_Start_Game.__Before__Player_List_Count(), File_Setting.__get_Setting__Max_Join_Player__());
+                    __in_Event.getPlayer().sendMessage(__Str_Count);
                     __in_Event.getPlayer().sendMessage("");
 
                     Integer __Count = 1;
@@ -126,6 +128,14 @@ You can use the plug-in's custom command.
                 }
             } else if (_Split_Chat_Message[0].equalsIgnoreCase(File_Command.__get_Command__Before_The_Game_Starts_Command__("Start_Game__Chief_Of_The_Room_Player"))) {
                 // 방장 게임 시작
+                for (String __Player : __Map_Before_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
+                    // 플레이어 이름 가져오기
+                    try {
+                        Player __JoinPlayer = Bukkit.getPlayer(__Player);
+                        __JoinPlayer.sendMessage("방장이 마피아 게임을 시작 하였습니다.");
+                    } catch (Exception e) { }
+                }
+
             }
         } else {
             // 게임 시작
