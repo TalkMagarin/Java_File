@@ -64,6 +64,8 @@ class Mafia_Before_Game_TimerTask extends TimerTask {
 
 class Mafia_After_Game_TimerTask extends TimerTask {
 
+    boolean __Night__ = false;
+
     int __Day_Round__ = 0;
     int __Now_Times__ = 0;
 
@@ -73,22 +75,44 @@ class Mafia_After_Game_TimerTask extends TimerTask {
     public void run() {
         Map_After_Start_Game __Map_After_Start_Game = Map_After_Start_Game.__Instance__();
 
-        if (__Now_Times__ == 60) {
-            if (__Day_Times__ > 0) {
-                __Day_Times__--;
-            } else if (__Day_Times__ == 0) {
-                for (String __Playername__ : __Map_After_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
-                    Player __Player__ = Bukkit.getPlayer(__Playername__);
-                    __Player__.sendTitle("§d투표 시간", "투표를 통해 마피아로 의심되는 사람을 지목하면 됩니다. 지목하지 않을 경우 스킵됩니다.");
+        if (!__Night__) {
+            // 낮일 경우
+            if (__Now_Times__ == 60) {
+                // 시간이 60초가 되었을때
+                if (__Day_Times__ > 0) {
+                    // 낮시간이 0보다 크면
+                    __Day_Times__--;
+                } else if (__Day_Times__ == 0) {
+                    // 낮시간이 0이면 투표시간으로 넘어감
+                    for (String __Playername__ : __Map_After_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
+                        Player __Player__ = Bukkit.getPlayer(__Playername__);
+                        __Player__.sendTitle("§d투표 시간", "투표를 통해 마피아로 의심되는 사람을 지목하면 됩니다. 지목하지 않을 경우 스킵됩니다.");
+                    }
+                } else if (__Vote_Times__ > 0) {
+                    // 투표시간이 0보다 크면
+                    __Vote_Times__--;
                 }
-            } else if (__Vote_Times__ > 0) {
-                __Vote_Times__--;
+
+                __Now_Times__ = 0;
             }
 
-            __Now_Times__ = 0;
+            if (__Vote_Times__ == 0) {
+                // 투표시간이 0이면
+                __Day_Times__ = File_Setting.__get_Setting__Day_Time__();
+                __Vote_Times__ = File_Setting.__get_Setting__Vote_Time__();
+
+                __Night__ = true;
+
+                for (String __Playername__ : __Map_After_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
+                    Player __Player__ = Bukkit.getPlayer(__Playername__);
+                    __Player__.sendTitle("§d투표 결과", "투표를 통해 플레이어님이 처형당했습니다.");
+                }
+            }
         } else {
-            __Now_Times__++;
+            // 밤일 경우
         }
+
+        __Now_Times__++;
     }
 
 }
