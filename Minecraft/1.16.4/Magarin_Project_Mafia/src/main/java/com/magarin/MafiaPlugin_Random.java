@@ -3,6 +3,7 @@ package com.magarin;
 import com.magarin.files.File_Setting;
 import com.magarin.hashmap.Map_After_Start_Game;
 import com.magarin.hashmap.Map_Before_Start_Game;
+import com.magarin.hashmap.Map_Die_Player;
 
 import java.util.List;
 import java.util.Random;
@@ -52,6 +53,7 @@ public class MafiaPlugin_Random {
 
          Integer __Mix_Jobs_Count = 0;
         for (String __Player__ : __Map_Before_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
+            Map_Die_Player.__Die__Join_Player_List__(__Player__);
             __Map_After_Start_Game.__After__Join_Player__(__Player__, __Mix_To_Jobs_Name__[__Mix_Jobs_Count]);
             __Mix_Jobs_Count++;
         }

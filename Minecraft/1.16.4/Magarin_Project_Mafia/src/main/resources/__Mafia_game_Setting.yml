@@ -15,10 +15,10 @@ Game_Play_Jobs:
   # 참가한 플레이어의 수와 작업 수는 동일해야 합니다.
   # Warning !! The number of players join and the number of jobs must be the same.
   Join_Player_Count_5:
-    - 'Mafia:2'
+    - 'Mafia:1'
     - 'Doctor:1'
     - 'Police:1'
-    - 'Citizen:1'
+    - 'Citizen:2'
   Join_Player_Count_6:
     - 'Mafia:2'
     - 'Doctor:1'

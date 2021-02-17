@@ -12,16 +12,27 @@ import java.util.TimerTask;
 
 public class MafiaPlugin_Timer {
 
+    private static Mafia_Before_Game_TimerTask __Mafia_Before_Game_TimerTask = null;
+    private static Mafia_After_Game_TimerTask __Mafia_After_Game_TimerTask = null;
+
     public static void __Before_Game_Timer__() {
-        Mafia_Before_Game_TimerTask __Mafia_Before_Game_TimerTask = new Mafia_Before_Game_TimerTask();
+        __Mafia_Before_Game_TimerTask = new Mafia_Before_Game_TimerTask();
         Timer __Timer__ = new Timer();
         __Timer__.scheduleAtFixedRate(__Mafia_Before_Game_TimerTask, 0, 3500);
     }
 
     public static void __After_Game_Timer__() {
-        Mafia_After_Game_TimerTask __Mafia_After_Game_TimerTask = new Mafia_After_Game_TimerTask();
+        __Mafia_After_Game_TimerTask = new Mafia_After_Game_TimerTask();
         Timer __Timer__ = new Timer();
         __Timer__.scheduleAtFixedRate(__Mafia_After_Game_TimerTask, 0, 1000);
+    }
+
+    public static void __Before_Timer_Cancel() {
+        __Mafia_Before_Game_TimerTask.cancel();
+    }
+
+    public static void __After_Timer_Cancel() {
+        __Mafia_After_Game_TimerTask.cancel();
     }
 
 }

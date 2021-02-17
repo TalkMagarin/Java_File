@@ -28,6 +28,10 @@ public class Map_After_Start_Game implements HashMap_Interface {
         this.__After_Start_Game_Player_List__ = new HashMap<>();
     }
 
+    public void __After__Player_Clear__() {
+        this.__After_Start_Game_Player_List__.clear();
+    }
+
     /**
      * 시작한 게임에 플레이어가 존재하는지 확인
      * @param __in_Player_name Player name

@@ -40,6 +40,10 @@ public class Map_Jobs_Skill implements HashMap_Interface {
         return this.__Map_Jobs_Skill_List__.size();
     }
 
+    public void __Skill__Player_Clear__() {
+        this.__Map_Jobs_Skill_List__.clear();
+    }
+
     public boolean __Skill__Check_All_Player_Skill() {
         for (String __Player_name__ : __Map_After_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
             String __get_Player_jobs__ = __Map_After_Start_Game.__Interface_Get_HashMap__(__Player_name__);
@@ -58,15 +62,15 @@ public class Map_Jobs_Skill implements HashMap_Interface {
     public void __Skill__Reset_HashMap__() {
         for (String __Player_name__ : __Map_After_Start_Game.__Interface_Get_HashMap_List__().keySet()) {
             String __get_Player_jobs__ = __Map_After_Start_Game.__Interface_Get_HashMap__(__Player_name__);
-            String __HashMap_Key__ = String.format("%s_%s", __Player_name__, __get_Player_jobs__);
+//            String __HashMap_Key__ = String.format("%s_%s", __Player_name__, __get_Player_jobs__);
 
-            if (__Skill__Jobs_Skill_List_Count() == 0)
+            if (__Interface_Get_HashMap__(__get_Player_jobs__) == null) {
                 // Null = 스킬 사용전
-                this.__Map_Jobs_Skill_List__.put(__HashMap_Key__, "%%%null%%%");
-            else {
-                if (!__Interface_Get_HashMap__(__HashMap_Key__).equalsIgnoreCase("%%%die%%%")) {
-                    // 사용자가 죽지 않았을 경우 Null로 초기화
-                    this.__Map_Jobs_Skill_List__.replace(__HashMap_Key__, "%%%null%%%");
+                this.__Map_Jobs_Skill_List__.put(__get_Player_jobs__, "%%%null%%%");
+            } else {
+                if (Map_Die_Player.__Die__Check_Player__(__Player_name__)) {
+                    // 직업군이 죽지 않았을 경우 Null로 초기화
+                    this.__Map_Jobs_Skill_List__.replace(__get_Player_jobs__, "%%%null%%%");
                 }
             }
         }
@@ -89,34 +93,10 @@ public class Map_Jobs_Skill implements HashMap_Interface {
         String __HashMap_Key__ = String.format("%s_%s", __in_Player_name, __get_Player_jobs__);
 
         if (__Interface_Get_HashMap__(__HashMap_Key__).equalsIgnoreCase("%%%null%%%")) {
+            this.__Map_Jobs_Skill_List__.replace(__HashMap_Key__, __in_Select_Player_name);
+
             if (__get_Player_jobs__.equalsIgnoreCase("Mafia")) {
-                boolean __Check_Skill__ = true;
                 __Player__.sendTitle(String.format("§c%s", __in_Select_Player_name), "처참하게 죽일 플레이어를 지목 하셨습니다.");
-                String[][] __Select_Kill_Players__ = new String[10][2];
-                Integer __Count__ = 0;
-                for (String __Player_Key__ : __Interface_Get_HashMap_List__().keySet()) {
-                    String[] __Player_Jobs__ = __Player_Key__.split("_");
-
-                    if (__Player_Jobs__[1].equalsIgnoreCase("Mafia")) {
-                        if (__Interface_Get_HashMap__(__Player_Key__).equalsIgnoreCase("%%%null%%%")) {
-                            __Check_Skill__ = false;
-                            break;
-                        } else {
-                            __Select_Kill_Players__[__Count__][0] = __Player_Jobs__[0];
-                            __Select_Kill_Players__[__Count__][1] = __Player_Jobs__[1];
-                        }
-                    }
-                }
-
-                if (__Check_Skill__) {
-                    for (String __Player_Key__ : __Interface_Get_HashMap_List__().keySet()) {
-                        String[] __Player_Jobs__ = __Player_Key__.split("_");
-
-                        if (__Player_Jobs__[1].equalsIgnoreCase("Mafia")) {
-
-                        }
-                    }
-                }
             } else if (__get_Player_jobs__.equalsIgnoreCase("Doctor"))
                 __Player__.sendTitle(String.format("§a%s", __in_Select_Player_name), "해당 플레이어를 마피아의 공격으로 부터 치료 하였습니다.");
             else if (__get_Player_jobs__.equalsIgnoreCase("Police"))
@@ -131,8 +111,6 @@ public class Map_Jobs_Skill implements HashMap_Interface {
                 __Player__.sendTitle("§4저런..", "당신은 능력을 사용할 수 없습니다.");
                 return;
             }
-
-            this.__Map_Jobs_Skill_List__.replace(__HashMap_Key__, __in_Select_Player_name);
         } else {
             __Player__.sendTitle("§c에러", "이미 능력을 사용했습니다.");
         }
