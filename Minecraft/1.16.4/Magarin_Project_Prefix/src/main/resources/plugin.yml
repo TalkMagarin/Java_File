@@ -1,0 +1,5 @@
+name: PrefixPlugin
+version: ${project.version}
+main: magarin.prefixplugin.PrefixPlugin
+api-version: 1.16
+authors: [ Talk_Magarin ]
