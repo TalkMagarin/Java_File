@@ -87,6 +87,23 @@ public class Sqlite_Handler {
     }
 
     /**
+     * 테이블에서 데이터를 불러옵니다.
+     * @param __in_Query__ 적용할 쿼리문
+     * @return ResultSet
+     */
+    protected ResultSet __Handler__Get_Data__(String __in_Query__) {
+        try (Connection __Connection__ = DriverManager.getConnection(__Handler__Get_JDBC__());
+             Statement __Statement__ = __Connection__.createStatement();
+             ResultSet __ResultSet__ = __Statement__.executeQuery(__in_Query__)) {
+            return __ResultSet__;
+        } catch (SQLException __SQL_Exception__) {
+            __SQL_Exception__.printStackTrace();
+        }
+
+        return null;
+    }
+
+    /**
      * 테이블에 데이터를 추가합니다.
      * @param __in_Query__ 적용할 쿼리문
      */

@@ -1,6 +1,11 @@
 package com.magarin.economy_bank;
 
 
+import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -51,6 +56,43 @@ public class Economy_Handler {
         }
 
         return __Elapsed_date__;
+    }
+
+    private static Economy __Economy__;
+
+    /**
+     * Vault 의 라이브러리를 정상적으로 사용할 수 있는지 확인합니다.
+     * @return boolean
+     */
+    public static boolean __Eco_Handler__Setup_Economy__() {
+        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null)
+            return false;
+
+        RegisteredServiceProvider<Economy> __Provider_Economy__ = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
+        if (__Provider_Economy__ == null)
+            return false;
+
+        __Economy__ = __Provider_Economy__.getProvider();
+
+        return true;
+    }
+
+    /**
+     * 플레이어의 소지금을 설정합니다.
+     * @param __in_Player__ 플레이어
+     * @param __in_Amount__ 소지금
+     */
+    public static void __Eco_Handler__Set_Balance__(Player __in_Player__, double __in_Amount__) {
+        __Economy__.depositPlayer(__in_Player__, __in_Amount__);
+    }
+
+    /**
+     * 플레이어의 소지금을 불러옵니다.
+     * @param __in_Player__ 플레이어
+     * @return double
+     */
+    public static double __Eco_Handler__Get_Balance__(Player __in_Player__) {
+        return __Economy__.getBalance(__in_Player__);
     }
 
 }
