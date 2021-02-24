@@ -21,6 +21,7 @@ import java.util.Arrays;
 public class Inven_Menu {
 
     private static final Plugin __Plugin_Class__ = Economy_Bank.getPlugin(Economy_Bank.class);
+
     private static final Sqlite_Installment_Savings __Sqlite_Installment_Savings__ = Sqlite_Installment_Savings.__Instance__();
 
     /**
@@ -33,6 +34,8 @@ public class Inven_Menu {
         Inventory __Inventory__ = __Plugin_Class__.getServer().createInventory(null, 45, "Menu");
         // 은행관련
         __Inventory__.setItem(29, __ItemStack__Icon_Bank__(__Player_Uuid__));
+
+        __in_Player__.openInventory(__Inventory__);
     }
 
     /**

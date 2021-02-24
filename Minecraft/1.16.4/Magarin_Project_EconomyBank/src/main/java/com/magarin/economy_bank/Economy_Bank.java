@@ -1,9 +1,9 @@
 package com.magarin.economy_bank;
 
+import com.magarin.economy_bank.event.Event_Handler;
 import com.magarin.economy_bank.sqlite.Sqlite_Installment_Savings;
 import com.magarin.economy_bank.yaml.Yaml_Setting;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Economy_Bank extends JavaPlugin {
@@ -16,6 +16,10 @@ public final class Economy_Bank extends JavaPlugin {
         __on_Sqlite_Table__();
 
         __on_Is_Support_Plugin__();
+
+        // 이벤트 기능 활성화
+        PluginManager __Plugin_Manager__ = this.getServer().getPluginManager();
+        __Plugin_Manager__.registerEvents(new Event_Handler(), this);
     }
 
     @Override
