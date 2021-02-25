@@ -50,6 +50,21 @@ public class Inven_Bank {
     }
 
     /**
+     * 적금 개설 아이콘을 불러옵니다.
+     * @return ItemStank
+     */
+    private static ItemStack __ItemStack__Icon_Create__() {
+        // 연두색 유리판
+        ItemStack __Icon_Create__ = new ItemStack(Material.GREEN_STAINED_GLASS_PANE, 1);
+        ItemMeta __Create_ItemMeta__ = __Icon_Create__.getItemMeta();
+
+        __Create_ItemMeta__.setDisplayName("적금통장 개설");
+        __Icon_Create__.setItemMeta(__Create_ItemMeta__);
+
+        return __Icon_Create__;
+    }
+
+    /**
      * 각 플레이어에 맞는 적금정보 아이콘을 불러옵니다.
      * @return ItemStack
      */
@@ -65,7 +80,7 @@ public class Inven_Bank {
 
         ItemStack __Icon_Bank__ = new ItemStack(Material.BOOK, 1);
         ItemMeta __Bank_ItemMeta__ = __Icon_Bank__.getItemMeta();
-        __Bank_ItemMeta__.setDisplayName("적금통장");
+        __Bank_ItemMeta__.setDisplayName("§f적금통장");
         __Bank_ItemMeta__.setLore(new ArrayList<String>(Arrays.asList(
                 "플레이어가 개설한 적금통장 입니다.", "",
                 "개설일 : " + __in_Data__[3] + "(" + __Elapsed_date__ + " 일 경과)",
@@ -75,21 +90,6 @@ public class Inven_Bank {
         __Icon_Bank__.setItemMeta(__Bank_ItemMeta__);
 
         return __Icon_Bank__;
-    }
-
-    /**
-     * 적금 개설 아이콘을 불러옵니다.
-     * @return ItemStank
-     */
-    private static ItemStack __ItemStack__Icon_Create__() {
-        // 연두색 유리판
-        ItemStack __Icon_Create__ = new ItemStack(Material.GREEN_STAINED_GLASS_PANE, 1);
-        ItemMeta __Create_ItemMeta__ = __Icon_Create__.getItemMeta();
-
-        __Create_ItemMeta__.setDisplayName("적금통장 개설");
-        __Icon_Create__.setItemMeta(__Create_ItemMeta__);
-
-        return __Icon_Create__;
     }
 
 }

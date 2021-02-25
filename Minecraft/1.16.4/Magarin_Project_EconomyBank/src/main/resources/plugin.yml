@@ -4,3 +4,7 @@ main: com.magarin.economy_bank.Economy_Bank
 depends: [Vault]
 api-version: 1.16
 authors: [ Talk_Magarin ]
+
+commands:
+  bankmenu:
+  은행메뉴:

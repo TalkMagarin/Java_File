@@ -2,6 +2,7 @@ package com.magarin.economy_bank.inventory;
 
 import com.magarin.economy_bank.Economy_Bank;
 import com.magarin.economy_bank.sqlite.Sqlite_Installment_Savings;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -31,11 +32,25 @@ public class Inven_Menu {
     public static void __Menu__Open_Inventory__(Player __in_Player__) {
         String __Player_Uuid__ = __in_Player__.getUniqueId().toString();
 
-        Inventory __Inventory__ = __Plugin_Class__.getServer().createInventory(null, 45, "Menu");
+        Inventory __Inventory__ = Bukkit.createInventory(null, 45, "Menu");
         // 은행관련
         __Inventory__.setItem(29, __ItemStack__Icon_Bank__(__Player_Uuid__));
 
         __in_Player__.openInventory(__Inventory__);
+    }
+
+    /**
+     * 플레이어에게 Inventory GUI를 보여줍니다.
+     * @param __in_Player__ 플레이어
+     */
+    public static Inventory __Menu__Inventory__(Player __in_Player__) {
+        String __Player_Uuid__ = __in_Player__.getUniqueId().toString();
+
+        Inventory __Inventory__ = __Plugin_Class__.getServer().createInventory(null, 45, "Menu");
+        // 은행관련
+        __Inventory__.setItem(29, __ItemStack__Icon_Bank__(__Player_Uuid__));
+
+        return __Inventory__;
     }
 
     /**
@@ -48,10 +63,9 @@ public class Inven_Menu {
 
         ItemStack __Icon_Bank__ = new ItemStack(Material.BOOK, 1);
         ItemMeta __Bank_ItemMeta__ = __Icon_Bank__.getItemMeta();
-        __Bank_ItemMeta__.setDisplayName("은행정보");
+        __Bank_ItemMeta__.setDisplayName("§f은행정보");
         __Bank_ItemMeta__.setLore(new ArrayList<String>(Arrays.asList(
-                "플레이어의 은행정보를 확인할 수 있습니다.", "",
-                "보유중인 적금통장 : " + __Player_Data_Count__ + "개", ""
+                "", "보유중인 적금통장 : " + __Player_Data_Count__ + "개", "§0Bank"
         )));
         __Icon_Bank__.setItemMeta(__Bank_ItemMeta__);
 

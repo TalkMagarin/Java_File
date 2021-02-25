@@ -26,6 +26,7 @@ public class Event_Handler implements Listener {
 
         if (__Message__.charAt(0) == '^') {
             Event_AsyncPlayerChat.__on_AsyncPlayerChat__(__in_Event__);
+            __in_Event__.setCancelled(true);
         }
 
         return;

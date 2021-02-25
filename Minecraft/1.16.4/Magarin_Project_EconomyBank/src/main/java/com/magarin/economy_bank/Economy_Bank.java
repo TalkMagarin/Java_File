@@ -1,8 +1,12 @@
 package com.magarin.economy_bank;
 
 import com.magarin.economy_bank.event.Event_Handler;
+import com.magarin.economy_bank.inventory.Inven_Menu;
 import com.magarin.economy_bank.sqlite.Sqlite_Installment_Savings;
 import com.magarin.economy_bank.yaml.Yaml_Setting;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,6 +29,18 @@ public final class Economy_Bank extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player) {
+            // 명령어를 입력한 사용자가 플레이어 일 경우
+            if (label.equalsIgnoreCase("bankmenu") || label.equalsIgnoreCase("은행메뉴")) {
+                Player __Player__ = (Player) sender;
+                __Player__.openInventory(Inven_Menu.__Menu__Inventory__(__Player__));
+            }
+        }
+        return false;
     }
 
     /**
